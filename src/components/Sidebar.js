@@ -27,16 +27,16 @@ const Sidebar = () => {
       return (
         <>
           <Tab icon={<CalendarMonth />} value="tab1">
-            First Tab
+            Skills
           </Tab>
           <Tab icon={<CalendarMonth />} value="tab2">
-            Second Tab
+            Job Experience
           </Tab>
           <Tab icon={<CalendarMonth />} value="tab3">
-            Third Tab
+            Projects
           </Tab>
           <Tab icon={<CalendarMonth />} value="tab4">
-            Fourth Tab
+            Portfolio
           </Tab>
         </>
       );

@@ -120,12 +120,17 @@ export const Appearance = () => {
         </section>
       </div>
       <div className={styles.container}>
-        <span>ReactJS</span>
+        <h1>Expertise</h1>
+        <span>HTML</span>
         <ProgressBar value={1} validationState="success" />
-        <span>NodeJS</span>
+        <span>CSS</span>
+        <ProgressBar value={1} validationState="success" />
+        <span>JavaScript</span>
         <ProgressBar value={0.95} validationState="warning" />
+        <span>ReactJS</span>
+        <ProgressBar value={0.75} validationState="warning" />
         <span>MongoDB</span>
-        <ProgressBar value={0.75} validationState="error" />
+        <ProgressBar value={0.5} validationState="error" />
       </div>
     </>
   );
