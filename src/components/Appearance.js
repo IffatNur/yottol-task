@@ -16,6 +16,7 @@ import {
   mergeClasses,
 } from "@fluentui/react-components";
 import { MoreHorizontal20Filled } from "@fluentui/react-icons";
+import { ProgressBar } from "@fluentui/react-components/unstable";
 
 const resolveAsset = (asset) => {
   const ASSET_URL =
@@ -24,15 +25,16 @@ const resolveAsset = (asset) => {
 };
 const useStyles = makeStyles({
   main: {
-    ...shorthands.gap("36px"),
+    ...shorthands.gap("10px"),
     display: "flex",
     flexDirection: "column",
     flexWrap: "wrap",
+    ...shorthands.margin("20px", "30px"),
   },
   title: { ...shorthands.margin(0, 0, "12px") },
   description: { ...shorthands.margin(0, 0, "12px") },
   card: {
-    width: "480px",
+    width: "350px",
     maxWidth: "100%",
     height: "fit-content",
   },
@@ -41,6 +43,13 @@ const useStyles = makeStyles({
   },
   logo: { ...shorthands.borderRadius("4px"), width: "48px", height: "48px" },
   text: { ...shorthands.margin(0) },
+  container: {
+    width: "40%",
+    display: "flex",
+    flexDirection: "column",
+    rowGap: "20px",
+    ...shorthands.margin("20px", "30px"),
+  },
 });
 
 const Cards = ({ title, description }) => {
@@ -75,7 +84,7 @@ const CardExample = ({ className,
         image={
           <img className={styles.logo} src={resolveAsset("app_logo.svg")} alt=""/>
         }
-        header={<Text weight="semibold">App Name</Text>}
+        header={<Text weight="semibold">Skill Set</Text>}
         description={<Caption1 className={styles.caption}>Developer</Caption1>}
         action={
           <Button
@@ -87,8 +96,7 @@ const CardExample = ({ className,
       />
 
       <p className={styles.text}>
-        Donut chocolate bar oat cake. Dragée tiramisu lollipop bear claw.
-        Marshmallow pastry jujubes toffee sugar plum.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt quibusdam fugit quasi tenetur corporis. Sit repellat nisi ex voluptatum eligendi!
       </p>
     </Card>
   );
@@ -96,11 +104,30 @@ const CardExample = ({ className,
 export const Appearance = () => {
   const styles = useStyles();
   return (
-    <div className={styles.main}>
-      <section>
-        <CardExample appearance="subtle" />
-      </section>
-    </div>
+    <>
+      <div
+        className={styles.main}
+        style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}
+      >
+        <section>
+          <CardExample appearance="filled-alternative" />
+        </section>
+        <section>
+          <CardExample appearance="filled-alternative" />
+        </section>
+        <section>
+          <CardExample appearance="filled-alternative" />
+        </section>
+      </div>
+      <div className={styles.container}>
+        <span>ReactJS</span>
+        <ProgressBar value={1} validationState="success" />
+        <span>NodeJS</span>
+        <ProgressBar value={0.95} validationState="warning" />
+        <span>MongoDB</span>
+        <ProgressBar value={0.75} validationState="error" />
+      </div>
+    </>
   );
 };
 Appearance.parameters = {

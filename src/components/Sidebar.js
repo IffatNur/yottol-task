@@ -17,7 +17,6 @@ const useStyles = makeStyles({
     ...shorthands.padding("50px", "20px"),
     rowGap: "20px",
     backgroundColor:'#d2ccf8',
-    width: '15%',
     height: '100vh'
   },
 });
